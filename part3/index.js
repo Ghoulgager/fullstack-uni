@@ -7,7 +7,6 @@ const morgan = require('morgan')
 const cors = require('cors')
 
 
-// express middleware
 morgan.token('request-body', (req) => {
     return JSON.stringify(req.body)
 })
@@ -55,13 +54,7 @@ app.use(morgan(function (tokens, req, res) {
 }))
 
 
-// helper function
-// const generateId = () => {
-//     return Math.floor(Math.random() * (10e5 - 5)) + 5
-// }
 
-
-// routes
 app.get('/info', (req, res, next) => {
     Person
         .find({})
