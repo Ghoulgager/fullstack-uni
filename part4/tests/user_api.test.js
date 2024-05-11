@@ -7,7 +7,6 @@ const User = require('../models/user')
 const helper = require('./test_helper')
 
 const api = supertest(app)
-jest.setTimeout(20000)
 
 beforeEach(async () => {
     await User.deleteMany({})
