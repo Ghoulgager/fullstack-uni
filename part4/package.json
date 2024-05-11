@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
-    "watch": "NODE_ENV=development nodemon index.js",
-    "lint": "eslint .",
-    "test": "NODE_ENV=test jest --verbose --runInBand -t 'user api test'"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env  NODE_ENV=test node --test",
+    "lint": "eslint ."
   },
   "author": "HelpMe",
   "license": "IDK",
   "dependencies": {
     "bcrypt": "^3.0.8",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.6.0",
     "express": "^4.19.2",
     "jsonwebtoken": "^8.5.1",
