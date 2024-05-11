@@ -10,7 +10,7 @@ if (process.env.MONGODB_URI === undefined) {
     process.exit(1)
 }
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url)
     .then(() => {
         console.log('connected to MongoDB')
     })

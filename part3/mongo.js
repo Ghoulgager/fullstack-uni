@@ -10,7 +10,7 @@ const password = process.argv[2]
 const url =
   `mongodb+srv://ghoulgager:${password}@cluster0.bnpmn3c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
     name: String,

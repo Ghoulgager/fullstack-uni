@@ -7,7 +7,6 @@ const morgan = require('morgan')
 const cors = require('cors')
 
 
-// express middleware
 morgan.token('request-body', (req) => {
     return JSON.stringify(req.body)
 })
@@ -55,13 +54,7 @@ app.use(morgan(function (tokens, req, res) {
 }))
 
 
-// helper function
-// const generateId = () => {
-//     return Math.floor(Math.random() * (10e5 - 5)) + 5
-// }
 
-
-// routes
 app.get('/info', (req, res, next) => {
     Person
         .find({})
@@ -143,7 +136,7 @@ app.put('/api/persons/:id', (req, res, next) => {
 
 app.delete('/api/persons/:id', (req, res, next) => {
     Person
-        .findByIdAndRemove(req.params.id)
+        .findByIdAndDelete(req.params.id)
         .then(() => {
             res.status(204).end()
         })
@@ -154,7 +147,6 @@ app.use(unknownEndpoint)
 app.use(errorHandler)
 
 
-// server configuration
 const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => {
